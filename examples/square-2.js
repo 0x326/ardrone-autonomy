@@ -15,6 +15,7 @@ var navdata_options = (
   | navdata_option_mask(arDroneConstants.options.VISION_DETECT)
   | navdata_option_mask(arDroneConstants.options.MAGNETO)
   | navdata_option_mask(arDroneConstants.options.WIFI)
+  | navdata_option_mask(arDroneConstants.options.ZIMMU_3000)
 );
 
 // Land on ctrl-c
@@ -44,15 +45,15 @@ mission.log("mission-" + df(new Date(), "yyyy-mm-dd_hh-MM-ss") + ".txt");
 // Plan mission
 mission.takeoff()
        .zero()
-       .hover(500)
-       .altitude(2)
-       .forward(2)
+       .hover(1000)
+       .altitude(1.5)
+       .forward(1)
        .cw(90)
-       .forward(2)
+       .forward(1)
        .cw(90)
-       .forward(2)
+       .forward(1)
        .cw(90)
-       .forward(2)
+       .forward(1)
        .go({x:0, y:0})
        .hover(500)
        .land();

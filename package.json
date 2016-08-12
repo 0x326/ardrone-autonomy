@@ -1,5 +1,5 @@
 {
-  "name": "ardrone-autonomy-custom",
+  "name": "ardrone-autonomy",
   "version": "0.1.2",
   "description": "Building blocks for autonomous flying an AR.Drone.",
   "repository": {

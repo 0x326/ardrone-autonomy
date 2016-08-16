@@ -41,7 +41,7 @@ by the bottom camera.
 
 This module exposes a high level API to plan and execute missions, by focusing on where
 the drone should go instead of its low-level movements. Here is a simple example, 
-with the drone taking off, travelling alongs a 2 x 2 meters square ane then landing.
+with the drone taking off, travelling alongs a 2 x 2 meters square and then landing.
 
 ```js
 var autonomy = require('ardrone-autonomy');

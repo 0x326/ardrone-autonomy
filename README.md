@@ -47,7 +47,10 @@ with the drone taking off, travelling alongs a 2 x 2 meters square ane then land
 var autonomy = require('ardrone-autonomy');
 var mission  = autonomy.createMission();
 
-mission.takeoff()
+mission.ftrim()      // Makes a flat trim before takeoff
+       .takeoff()
+       .wait(4000)   // Wait four seconds
+       .calibrate()  // Calibrate the drone's compass (will not calibrate if it is not ready)
        .zero()       // Sets the current state as the reference
        .altitude(1)  // Climb to altitude = 1 meter
        .forward(2)   
@@ -81,9 +84,17 @@ debug/plot the state and controller behavior.
 Execute the mission. The callback has the form `function(err,result)` and will be triggered in
 case of error or at the end of the mission.
 
+#### mission.ftrim()
+
+Add a flat trim step to the mission. Drone must be landed.
+
 #### mission.takeoff()
 
 Add a takeoff step to the mission.
+
+#### mission.calibrate()
+
+Add a compass calibration step to the mission. The drone is ready for calibration after about four seconds after takeoff
 
 #### mission.forward/backward/left/right/up/down(distance)
 

@@ -74,6 +74,31 @@ mission.run(function (err, result) {
 
 ### Mission API
 
+#### autonomy.createMission(options)
+
+Create a mission object. Any property in `options` can override the following default values: 
+
+```javascript
+{tag: {
+    x: 0,
+    y: 0,
+    yaw: 0
+}
+pid: {
+    x_axis:   {p_constant: 0.5, i_constant: 0, d_constant: 0.35}, 
+    y_axis:   {p_constant: 0.5, i_constant: 0, d_constant: 0.35}, 
+    z_axis:   {p_constant: 0.8, i_constant: 0, d_constant: 0.35}, 
+    yaw_axis: {p_constant: 1.0, i_constant: 0, d_constant: 0.30}
+},
+state: {
+    x: 0,
+    y: 0,
+    z: 0,
+    yaw: 0,
+    absoluteYaw: null
+}}
+```
+
 #### mission.log(path)
 
 Log the mission data, csv formatted, in the given file. Makes it really usefull to
@@ -185,3 +210,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+## AR.Drone SDK 2
+
+It might be useful to use the official AR.Drone documentation when using mission.client().config(key, value). As of 2016, it can be downloaded [here](http://developer.parrot.com/docs/SDK2/ARDrone_SDK_2_0_1.zip)

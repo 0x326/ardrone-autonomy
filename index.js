@@ -1,5 +1,5 @@
 var autonomy = exports;
-var ardrone = require('ar-drone-custom');
+var ardrone = require('ar-drone');
 
 exports.EKF = require('./lib/EKF');
 exports.Camera = require('./lib/Camera');

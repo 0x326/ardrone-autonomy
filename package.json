@@ -22,7 +22,7 @@
     "sylvester": "0.0.21",
     "async": "0.2.9",
     "geolib": "2.0.21",
-    "ar-drone": "0.3.3"
+    "ar-drone": "^0.3.3"
   },
   "devDependencies": {
     "utest": "0.0.6",

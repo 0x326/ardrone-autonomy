@@ -48,20 +48,20 @@ test('Controller', {
 
         // Test forward with yaw 90
         var yaw = 90;
-        ctrl._state.yaw = yaw.toRad();
+        ctrl._state.yaw = toRad(yaw);
         ctrl.forward(1);
         assert.equal(Math.round(ctrl._goal.x * 1000) / 1000, 0);
         assert.equal(ctrl._goal.y, 1);
 
         // Test forward with yaw 45
         var yaw = 45;
-        ctrl._state.yaw = yaw.toRad();
+        ctrl._state.yaw = toRad(yaw);
         ctrl.forward(1);
         assert.equal(Math.round(ctrl._goal.x * 1000) / 1000, Math.round(ctrl._goal.y * 1000) /1000);
 
         // Test forward with yaw -45
         var yaw = -45;
-        ctrl._state.yaw = yaw.toRad();
+        ctrl._state.yaw = toRad(yaw);
         ctrl.forward(1);
         assert.equal(Math.round(ctrl._goal.x * 1000) / 1000, -Math.round(ctrl._goal.y * 1000) /1000);
     },
@@ -77,14 +77,14 @@ test('Controller', {
 
         // Test right with yaw 90
         var yaw = 90;
-        ctrl._state.yaw = yaw.toRad();
+        ctrl._state.yaw = toRad(yaw);
         ctrl.right(1);
         assert.equal(Math.round(ctrl._goal.x * 1000) / 1000, -1);
         assert.equal(Math.round(ctrl._goal.y * 1000) / 1000, 0);
 
         // Test right with yaw 45
         var yaw = 45;
-        ctrl._state.yaw = yaw.toRad();
+        ctrl._state.yaw = toRad(yaw);
         ctrl.right(1);
         assert.equal(Math.round(ctrl._goal.x * 1000) / 1000, -Math.round(ctrl._goal.y * 1000) /1000);
     },
@@ -169,3 +169,15 @@ test('Controller', {
         assert.equal(goal.yaw, state.yaw);
     }
 });
+
+// Converts numeric degrees to radians
+var toRad = function(number) {
+    'use strict';
+    return number * Math.PI / 180;
+};
+
+// Converts radians to numeric dregrees
+var toDeg = function(number) {
+    'use strict';
+    return number * 180 / Math.PI;
+};

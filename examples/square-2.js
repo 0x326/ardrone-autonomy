@@ -43,7 +43,9 @@ mission.client().config('detect:detect_type', 12);
 mission.log("mission-" + df(new Date(), "yyyy-mm-dd_hh-MM-ss") + ".txt");
 
 // Plan mission
-mission.takeoff()
+mission.ftrim()
+       .takeoff()
+       .wait(4000).calibrate()
        .zero()
        .hover(1000)
        .altitude(1.5)

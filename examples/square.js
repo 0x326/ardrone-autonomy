@@ -63,8 +63,7 @@ mission.run(function (err, result) {
             mission.client().land();
         } else {
             console.log(chalk.inverse.green("====Mission complete===="));
-            console.time(chalk.dim.blue("Call >> waterfall"));
-            setImmediate(doOver);
+            //setImmediate(doOver);
         }
     });
 
@@ -83,5 +82,4 @@ function doOver () {
 
     // Execute mission
     console.log(chalk.dim.blue("Running mission"));
-    console.timeEnd(chalk.dim.blue("Call >> waterfall"));
 }
